@@ -8,7 +8,7 @@ function downloadVideo() {
         return;
     }
 
-    // En gelişmiş YouTube ID yakalayıcı (Shorts, Mobil, Bilgisayar linkleri dahil)
+    // Link ne olursa olsun içindeki 11 haneli Video ID'sini çeker
     let videoId = "";
     const regExp = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
     const match = videoUrl.match(regExp);
@@ -20,7 +20,14 @@ function downloadVideo() {
         return;
     }
 
-    // Daha stabil çalışan alternatif ve ücretsiz bir indirme API'si
-    // Kullanıcı butona bastığında güvenli bir indirme butonu render eder
-    resultArea.innerHTML = `<iframe src="https://convert2mp3s.com/api/widget?url=https://www.youtube.com/watch?v=${videoId}&format=${format}" style="width: 100%; height: 60px; border: none; margin-top: 15px; border-radius: 4px;" scrolling="no"></iframe>`;
+    // YENİ VE REKLAMSIZ GÜVENLİ İNDİRME MOTORU
+    resultArea.innerHTML = `
+        <div style="margin-top: 20px; text-align: center;">
+            <p style="color: #ccc; margin-bottom: 10px; font-size: 14px;">Dosyanız hazırlanıyor, lütfen aşağıdaki butona tıklayın:</p>
+            <iframe src="https://button.yt2mp3.cc/?v=${videoId}&f=${format}&bg=101010&b_color=00e676&text_color=ffffff" 
+                    style="width: 100%; height: 60px; border: none; overflow: hidden;" 
+                    scrolling="no">
+            </iframe
+        </div>
+    `;
 }
