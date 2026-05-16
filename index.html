@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobil Çok Amaçlı Sitem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Modüler Navigasyon Menüsü (Yeni özellik geldikçe buraya link ekle) -->
+    <nav class="navbar">
+        <a href="#downloader" class="nav-brand">MobilAraçlar</a>
+        <div class="nav-links">
+            <a href="#downloader">YT İndirici</a>
+            <!-- İleride yeni modül gelirse buraya eklenecek, örn: <a href="#yeni">Yeni Araç</a> -->
+        </div>
+    </nav>
+
+    <!-- ANA İÇERİK ALANI -->
+    <main class="container">
+        
+        <!-- MODÜL 1: YouTube Downloader -->
+        <section id="downloader" class="card">
+            <h2>YouTube Video & MP3 İndir</h2>
+            <p>İndirmek istediğiniz YouTube video linkini yapıştırın.</p>
+            
+            <div class="input-group">
+                <input type="text" id="youtubeUrl" placeholder="https://www.youtube.com/watch?v=...">
+                <select id="downloadFormat">
+                    <option value="mp3">MP3 (Ses)</option>
+                    <option value="mp4">MP4 (Video)</option>
+                </select>
+                <button onclick="downloadVideo()">Dönüştür ve İndir</button>
+            </div>
+
+            <!-- Sonuçların görüneceği iframe/alan -->
+            <div id="resultArea" class="result-box"></div>
+        </section>
+
+        <!-- MODÜL 2 (Gelecekte eklenecek boş alan örneği) -->
+        <!-- 
+        <section id="yeni-modul" class="card">
+            <h2>Yeni Özellik Yakında</h2>
+        </section> 
+        -->
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
